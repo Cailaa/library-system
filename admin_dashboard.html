@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">🛡️</div>
+      <span class="brand-name">Admin Panel</span>
+    </div>
+
+    <span class="nav-label">Manage</span>
+
+    <button onclick="showSection('users')" class="active" id="nav-users">
+      <span class="nav-icon">👥</span> Users
+    </button>
+
+    <button onclick="showSection('records')" id="nav-records">
+      <span class="nav-icon">📋</span> Borrow Records
+    </button>
+
+    <button onclick="showSection('analytics')" id="nav-analytics">
+      <span class="nav-icon">📊</span> Analytics
+    </button>
+
+    <button onclick="logout()" class="logout-btn">
+      <span class="nav-icon">🚪</span> Logout
+    </button>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- BANNER -->
+    <div class="dashboard-banner">
+      <div class="banner-text">
+        <h2>Admin Dashboard 🛡️</h2>
+        <p>Manage students and monitor borrow records.</p>
+      </div>
+      <div class="banner-emoji">📊</div>
+    </div>
+
+    <!-- USERS -->
+    <div id="users" class="section active">
+      <p class="section-title">User Management</p>
+      <p class="users-subtitle">List of registered students</p>
+      <div id="usersList" class="users-grid"></div>
+    </div>
+
+    <!-- BORROW RECORDS -->
+    <div id="records" class="section">
+      <p class="section-title">Borrow Records</p>
+      <div id="recordsList"></div>
+    </div>
+
+    <!-- ANALYTICS -->
+    <div id="analytics" class="section">
+      <p class="section-title">Analytics</p>
+      <div id="analyticsData"></div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

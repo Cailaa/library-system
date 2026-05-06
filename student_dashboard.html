@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">📚</div>
+      <span class="brand-name">LibraryMS</span>
+    </div>
+
+    <span class="nav-label">Menu</span>
+    <button onclick="showSection('search')" class="active" id="nav-search">
+      <span class="nav-icon">🔍</span> Search
+    </button>
+    <button onclick="showSection('borrowed')" id="nav-borrowed">
+      <span class="nav-icon">📖</span> My Books
+    </button>
+    <button onclick="showSection('profile')" id="nav-profile">
+      <span class="nav-icon">👤</span> Profile
+    </button>
+
+    <button onclick="logout()" class="logout-btn">
+      <span class="nav-icon">🚪</span> Logout
+    </button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+    <!-- BANNER -->
+    <div class="dashboard-banner">
+      <div class="banner-text">
+        <h2>Welcome, Student! 👋</h2>
+        <p>The library is your home for knowledge and discovery.</p>
+      </div>
+      <div class="banner-emoji">📚</div>
+    </div>
+
+    <!-- SEARCH SECTION -->
+    <div id="search" class="section active">
+      <p class="section-title">Search Books</p>
+
+      <div class="search-row">
+        <input type="text" id="searchInput" placeholder="Search for a book...">
+        <select id="genreFilter" onchange="applyFilter()">
+          <option value="all">All Genres</option>
+          <option value="fiction">Fiction</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="science fiction">Sci-Fi</option>
+          <option value="romance">Romance</option>
+          <option value="adventure">Adventure</option>
+        </select>
+        <button class="btn-search" onclick="searchBooks()">Search</button>
+      </div>
+
+      <div id="bookList"></div>
+      <div id="bookDetails"></div>
+    </div>
+
+    <!-- BORROWED SECTION -->
+    <div id="borrowed" class="section">
+      <p class="section-title">My Borrowed Books</p>
+      <div id="borrowList"></div>
+    </div>
+
+    <!-- PROFILE SECTION -->
+    <div id="profile" class="section">
+      <p class="section-title">Profile</p>
+      <div class="profile-card">
+        <div class="avatar">🎓</div>
+        <div class="profile-info">
+          <h3 id="profileName">Student</h3>
+          <p id="profileEmail">Library Member</p>
+        </div>
+        <button class="btn-edit-profile" onclick="openEditProfileModal()">✏️ Edit Profile</button>
+      </div>
+    </div>
+
+    <!-- EDIT PROFILE MODAL -->
+    <div id="editProfileModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Edit Profile</h3>
+          <span class="close" onclick="closeEditProfileModal()">&times;</span>
+        </div>
+        <form id="editProfileForm" onsubmit="updateProfile(event)">
+          <div class="form-group">
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="editEmail">Email:</label>
+            <input type="email" id="editEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="editPassword">New Password (leave blank to keep current):</label>
+            <input type="password" id="editPassword" name="password" placeholder="Optional">
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" onclick="closeEditProfileModal()">Cancel</button>
+            <button type="submit" class="btn-save">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

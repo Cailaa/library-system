@@ -1,0 +1,29 @@
+Library Management System API
+
+This Library Management System provides an API that allows both students and administrators to manage books, accounts, and overall library activity in a simple and organized way.
+
+Users must first register an account before accessing the system. After registration, they can log in using their credentials to proceed.
+
+Student Features:
+
+Students can browse a list of available books in the system. Each book includes important details such as its title, description, and rating. The system also allows users to filter books by category, such as fantasy or action, and search for specific titles using keywords. 
+
+Search bar is also provided above, students can browse more books to their liking, for example they need to search up a fiction book like harry potter, they can easily look it up in the search bar if its available to borrow.
+
+When a student selects a book, they can use the “Borrow Book” button to borrow it. Once borrowed, the book will automatically appear in the “My Books” section. Each borrowed book has a return deadline, which is set to seven days from the date it was borrowed. Students can view this due date to ensure they return the book on time.
+
+The user profile section allows students to view and edit their personal information. The data shown in the profile is based on the account currently logged into the system.
+
+Admin Features:
+
+Administrators have access to a dashboard where they can monitor active student accounts. The admin panel also includes analytics that display useful information such as the total number of registered students and the total number of books available in the system.
+
+This system is designed to make library management more efficient by allowing users to easily browse, borrow, and return books, while giving administrators the tools to monitor activity and manage data effectively.
+
+Github link uploaded online:
+
+
+For admin dashboard access
+default:
+username: admin
+password: admin123
