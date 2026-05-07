@@ -20,8 +20,11 @@ Administrators have access to a dashboard where they can monitor active student 
 
 This system is designed to make library management more efficient by allowing users to easily browse, borrow, and return books, while giving administrators the tools to monitor activity and manage data effectively.
 
-Github link uploaded online:
+Web Host link uploaded online:
+http://library-system.fwh.is
 
+Github link repo:
+https://github.com/Cailaa/library-system.git
 
 For admin dashboard access
 default:
